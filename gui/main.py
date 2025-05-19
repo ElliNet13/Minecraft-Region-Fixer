@@ -89,7 +89,7 @@ class MainWindow(wx.Frame):
         self.secondrow_sizer.Add(self.proc_info_text, flag=wx.ALIGN_CENTER)
         self.secondrow_sizer.Add(self.proc_text, 0, flag=wx.RIGHT | wx.ALIGN_LEFT, border=15)
         self.secondrow_sizer.Add(self.el_info_text, 0, wx.ALIGN_CENTER)
-        self.secondrow_sizer.Add(self.el_text, 0, wx.ALIGN_RIGHT)
+        self.secondrow_sizer.Add(self.el_text, 0, wx.ALIGN_CENTER_VERTICAL)
         self.secondrow_static_box_sizer = wx.StaticBoxSizer(wx.StaticBox(panel, label="Scan options"))
         self.secondrow_static_box_sizer.Add(self.secondrow_sizer, 1, flag=wx.EXPAND)
 
@@ -100,7 +100,9 @@ class MainWindow(wx.Frame):
         # Lets try to create a monospaced font:
         ffont = wx.Font(9, wx.FONTFAMILY_MODERN, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL)
 #         print ffont.IsFixedWidth()
-        textattr = wx.TextAttr(font = ffont)
+        textattr = wx.TextAttr()  # create default TextAttr
+        textattr.SetFont(ffont)  # set font explicitly
+
         self.results_text.SetFont(ffont)
         self.results_text_box = wx.StaticBox(panel, label="Results", size = (100,100))
         self.results_text_box_sizer = wx.StaticBoxSizer(self.results_text_box)

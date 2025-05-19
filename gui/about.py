@@ -21,17 +21,11 @@ class AboutWindow(wx.Frame):
                                     label="Fix problems in Minecraft worlds.")
         self.about3 = wx.StaticText(panel, style=wx.ALIGN_CENTER,
                                     label="Official-web:")
-        self.link_github = wx.HyperlinkCtrl(panel, wx.ID_ABOUT,
-                        "https://github.com/Fenixin/Minecraft-Region-Fixer",
-                        "https://github.com/Fenixin/Minecraft-Region-Fixer",
-                        style=wx.ALIGN_CENTER)
+        self.link_github = wx.StaticText(panel, wx.ID_ANY, "[Link to Github]")
         self.about4 = wx.StaticText(panel,
                                     style=wx.TE_MULTILINE | wx.ALIGN_CENTER,
                                     label="Minecraft forums post:")
-        self.link_minecraft_forums = wx.HyperlinkCtrl(panel, wx.ID_ABOUT,
-            "http://www.minecraftforum.net/topic/302380-minecraft-region-fixer/",
-            "http://www.minecraftforum.net/topic/302380-minecraft-region-fixer/",
-            style=wx.ALIGN_CENTER)
+        self.link_minecraft_forums = wx.StaticText(panel, wx.ID_ANY, "[Link to Minecraft Region Fixer on Minecraft Forums]")
 
         self.close_button = wx.Button(panel, wx.ID_CLOSE)
 

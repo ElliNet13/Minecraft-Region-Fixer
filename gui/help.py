@@ -13,17 +13,11 @@ class HelpWindow(wx.Frame):
 
         self.help1 = wx.StaticText(panel, style=wx.ALIGN_CENTER,
                 label="If you need help you can give a look to the wiki:")
-        self.link_github = wx.HyperlinkCtrl(panel, wx.ID_ABOUT,
-                        "https://github.com/Fenixin/Minecraft-Region-Fixer/wiki",
-                        style=wx.ALIGN_CENTER,
-                        url="https://github.com/Fenixin/Minecraft-Region-Fixer/wiki")
+        self.link_github = wx.StaticText(panel, wx.ID_ANY, "[Link to wiki on Github]")
         self.help2 = wx.StaticText(panel,
                                     style=wx.TE_MULTILINE | wx.ALIGN_CENTER,
                                     label="Or ask in the minecraft forums:")
-        self.link_minecraft_forums = wx.HyperlinkCtrl(panel, wx.ID_ABOUT,
-            "http://www.minecraftforum.net/topic/302380-minecraft-region-fixer/",
-            "http://www.minecraftforum.net/topic/302380-minecraft-region-fixer/",
-            style=wx.ALIGN_CENTER)
+        self.link_minecraft_forums = wx.StaticText(panel, wx.ID_ANY, "[MORE MC FORMUMS]")
 
         self.close_button = wx.Button(panel, wx.ID_CLOSE)
 
